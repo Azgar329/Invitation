@@ -1,4 +1,4 @@
-Sayyed & Ulfa Fathima Wedding Invitation 💍
+Azgar & Rasheeda Wedding Invitation 💍
 
-SAVE THE DATE: JULY 24, 2022
+SAVE THE DATE: JANUARY 02, 2023
 
