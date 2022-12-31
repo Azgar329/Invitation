@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #ae3701c4;
-  --heading-color: #ae3701c4;
-  --subtitle-color: #f8791d
+  --primary-color: #daa520;
+  --heading-color: #c3a343;
+  --subtitle-color: #787160
 }
 
 body {
@@ -10,8 +10,11 @@ body {
 	align-items: center;
 	/* height: 100vh;
     width: 100%; */
+	margin: 0px;
 	flex-direction: column;
   font-family: Arial, Helvetica, Sans-serif;
+	background: linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,1)), url(../assets/img/bg.jpg);
+	
 }
 
 img {
@@ -24,8 +27,9 @@ img {
   width:15px;
   height:15px;
   position:absolute;
-  background: url(../assets/img/red-lobed-fall-clipart-leaf.png);
+  background: url(../assets/img/mapple_leaf.png);
   background-size: 100% 100%;
+	opacity: 0.5;
 }
 
 #leavesContainer {
@@ -41,17 +45,17 @@ img {
 .top-right-decoration {
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	display: block;
-  opacity: 0.6;
+	max-width: 30%;
 }
 
 .top-left-decoration {
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	display: block;
-  opacity: 0.6;
+	max-width: 30%;
 }
 
 .title h1 {
@@ -70,7 +74,7 @@ img {
 	margin: 0;
 	padding: 0;
 	font-size: 24px;
-	color: #ae3701eb;
+	color: #daa520;
 	line-height: 1;
 }
 
@@ -79,7 +83,7 @@ img {
 	font-weight: bolder;
 	font-style: normal;
 	font-size: 32px;
-	color: var(--heading-color);
+	color: var(--subtitle-color);
 	margin: 2px 16px 40px 16px;
 	text-align: center;
 }
@@ -94,7 +98,7 @@ img {
 }
 
 .title p {
-	color: #ae3701eb;
+	color: var(--heading-color);
 	margin: 30px 0px;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -114,6 +118,7 @@ img {
 	/* padding: 20px; */
 	text-align: center;
 	/* min-height:100%; */
+	margin: 8px;
 }
 
 
@@ -172,7 +177,7 @@ img {
 	width: 100%;
 	margin-bottom: 40px;
 	text-align: center;
-	color: var(--primary-color);
+	color: var(--subtitle-color);
 }
 
 .countdown {
@@ -243,6 +248,7 @@ a {
 
 .social-media-section {
 	width: 90%;
+	padding-bottom: 16px;
 }
 @media (min-width:425px) and (max-width:768px) {
 	.social-media-section {
@@ -297,5 +303,49 @@ a {
 }
 .arabic {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  direction: rtl
+  direction: rtl;
+}
+
+
+.gold-text {
+	color: var(--heading-color);
+	-webkit-text-fill-color: transparent;
+	background: -webkit-linear-gradient(transparent, transparent), url(/assets/img/gold_v2.png) repeat;
+	background: -o-linear-gradient(transparent, transparent);
+	-webkit-background-clip: text;
+}
+.gold-background {
+	background:var(--heading-color);
+}
+
+
+.video{ 
+	margin: -8px;
+	padding-bottom: 50px;
+	padding-top: 50px; 
+	width: 100%;
+}
+.video video{ 
+	object-fit:cover;
+	max-height: 60vh;
+	z-index: -999;
+	width: inherit;
+	width: -webkit-fill-available;
+}
+@media (min-width:425px) and (max-width:768px) {
+	.video video {
+		max-height: 60vh;
+	}
+}
+@media (min-width:769px) and (max-width:899px) {
+	.video video {
+		max-height: 60vh;
+	}
+}
+
+
+@media (min-width:900px) {
+	.video video {
+		max-height: 80vh;
+	}
 }

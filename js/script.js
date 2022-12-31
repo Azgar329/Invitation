@@ -1,22 +1,22 @@
 
 
-TweenLite.set("#leavesContainer");
+// TweenLite.set("#leavesContainer");
 
-const total = 60;
-const animate = (elm) => {
-  TweenMax.to(elm, R(6, 15), { y: h + 100, ease: Linear.easeNone, repeat: -1, delay: -15, opacity: 1 });
-  TweenMax.to(elm, R(4, 8), { x: '+=100', rotationZ: R(0, 180), repeat: -1, yoyo: true, ease: Sine.easeInOut, opacity: 0 },);
-  TweenMax.to(elm, R(2, 8), { rotationX: R(0, 360), rotationY: R(0, 360), repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: -5, opacity: 0 }, "+=1");
-}
+// const total = 60;
+// const animate = (elm) => {
+//   TweenMax.to(elm, R(6, 15), { y: h + 100, ease: Linear.easeNone, repeat: -1, delay: -15, opacity: 1 });
+//   TweenMax.to(elm, R(4, 8), { x: '+=100', rotationZ: R(0, 180), repeat: -1, yoyo: true, ease: Sine.easeInOut, opacity: 0 },);
+//   TweenMax.to(elm, R(2, 8), { rotationX: R(0, 360), rotationY: R(0, 360), repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: -5, opacity: 0 }, "+=1");
+// }
 
-const R = (min, max) => min + Math.random() * (max - min);
-const container = document.getElementById("leavesContainer"), w = window.innerWidth, h = window.innerHeight;
-for (i = 0; i < total; i++) {
-  const Div = document.createElement('div');
-  TweenLite.set(Div, { attr: { class: 'dot' }, x: R(0, `${w - 100}`), y: R(-200, -150), z: R(-200, 200) });
-  container.appendChild(Div);
-  animate(Div);
-}
+// const R = (min, max) => min + Math.random() * (max - min);
+// const container = document.getElementById("leavesContainer"), w = window.innerWidth, h = window.innerHeight;
+// for (i = 0; i < total; i++) {
+//   const Div = document.createElement('div');
+//   TweenLite.set(Div, { attr: { class: 'dot' }, x: R(0, `${w - 100}`), y: R(-200, -150), z: R(-200, 200) });
+//   container.appendChild(Div);
+//   animate(Div);
+// }
 
 
 
