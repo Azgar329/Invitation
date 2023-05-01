@@ -157,6 +157,27 @@ img {
 	margin-left: 16px;
 }
 
+.venue {
+	width: auto;
+	height: auto;
+	background-color: var(--subtitle-color);
+	border-radius: 16px;
+	text-align: center;
+	color: #fff;
+	padding: 8px 16px;
+}
+
+.video a {
+	text-decoration: none;
+	color: #fff;
+}
+.video.margin-left {
+	margin-left: 16px;
+}
+.video.margin-right {
+	margin-left: 16px;
+}
+
 .time-wrapper {
 	width: 65%;
 }
