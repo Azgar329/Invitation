@@ -27,7 +27,7 @@ $(document).on('click', function () {
 
 
 // Set the date we're counting down to
-const countDownDate = new Date('2023-05-03T06:00:00.000Z').getTime();
+const countDownDate = new Date('2023-10-25T06:00:00.000Z').getTime();
 
 // Update the count down every 1 second
 const x = setInterval(() => {
