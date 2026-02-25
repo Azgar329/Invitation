@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="description" content="Inviting you and your family to my wedding, to be held on 25th October at UNITY HALL, Kallapu, Mangaluru from 11:00 AM onwards.">
+  <meta property="og:title" content="Wedding Invitation | Jafar Weds Razana | 25th October">
+  <meta property="og:description" content="Inviting you and your family to my wedding, to be held on 25th October at UNITY HALL, Kallapu, Mangaluru from 11:00 AM onwards.">
+  <meta property="og:url" content="https://jafarwedsrazana.netlify.app/">
+  <title>Wedding Invitation | Jafar Weds Razana</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+Arabic:wght@600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8d48b;
+      --gold-dark: #a07c2a;
+      --cream: #faf6ed;
+      --dark: #1a1a1a;
+      --dark-bg: #0d0d0d;
+      --text-light: #f0e6d3;
+      --text-muted: #a89e8c;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      overflow-x: hidden;
+      min-height: 100vh;
+      cursor: none;
+    }
+
+    /* Custom Cursor */
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-dot {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10001;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor.hover {
+      transform: translate(-50%, -50%) scale(2);
+      background: rgba(201, 168, 76, 0.1);
+      border-color: var(--gold-light);
+    }
+
+    /* Floating Particles Canvas */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Mouse Glow Effect */
+    .mouse-glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+    }
+
+    /* Sections */
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.03) 0%, transparent 50%);
+      animation: rotateGlow 20s linear infinite;
+    }
+
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Decorative Border Frame */
+    .ornament-frame {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      pointer-events: none;
+    }
+
+    .ornament-frame::before,
+    .ornament-frame::after {
+      content: '✦';
+      position: absolute;
+      color: var(--gold);
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+
+    .ornament-frame::before {
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ornament-frame::after {
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-color: var(--gold);
+      opacity: 0.4;
+    }
+
+    .corner--tl { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
+    .corner--tr { top: -1px; right: -1px; border-top: 2px solid; border-right: 2px solid; }
+    .corner--bl { bottom: -1px; left: -1px; border-bottom: 2px solid; border-left: 2px solid; }
+    .corner--br { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
+
+    /* Bismillah */
+    .bismillah {
+      font-family: 'Noto Sans Arabic', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1s 0.3s forwards;
+      text-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
+    }
+
+    /* Names */
+    .couple-names {
+      margin-bottom: 1.5rem;
+    }
+
+    .name {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      color: var(--gold-light);
+      line-height: 1.2;
+      opacity: 0;
+      text-shadow: 0 0 40px rgba(201, 168, 76, 0.2);
+    }
+
+    .name:first-child { animation: fadeInUp 1s 0.6s forwards; }
+    .name:last-child { animation: fadeInUp 1s 1.2s forwards; }
+
+    .ampersand {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--gold);
+      margin: 0.3rem 0;
+      opacity: 0;
+      animation: fadeInUp 1s 0.9s forwards;
+    }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.8rem, 2vw, 1.1rem);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeInUp 1s 1.5s forwards;
+    }
+
+    .inshaallah {
+      font-family: 'Noto Sans Arabic', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--gold);
+      margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeInUp 1s 1.8s forwards;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      opacity: 0;
+      animation: fadeInUp 1s 2s forwards;
+    }
+
+    .divider-line {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .divider-icon {
+      color: var(--gold);
+      font-size: 0.7rem;
+    }
+
+    /* Event Details */
+    .event-details {
+      opacity: 0;
+      animation: fadeInUp 1s 2.2s forwards;
+      text-align: center;
+    }
+
+    .event-date {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+    }
+
+    .event-time {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      letter-spacing: 0.2em;
+    }
+
+    .event-time .nikah-badge {
+      display: inline-block;
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
+      padding: 0.15rem 0.6rem;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      margin-left: 0.5rem;
+    }
+
+    .venue-name {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 600;
+      color: var(--gold);
+      margin-top: 1.2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .venue-address {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeInUp 1s 2.8s forwards;
+    }
+
+    .scroll-indicator .mouse {
+      width: 24px;
+      height: 38px;
+      border: 2px solid rgba(201, 168, 76, 0.4);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      padding-top: 8px;
+    }
+
+    .scroll-indicator .wheel {
+      width: 3px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 2px;
+      animation: scrollWheel 2s infinite;
+    }
+
+    @keyframes scrollWheel {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(10px); }
+    }
+
+    /* Message Section */
+    .message-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .message-text {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .message-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .message-text::before,
+    .message-text::after {
+      content: '"';
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--gold);
+      opacity: 0.5;
+    }
+
+    .message-text::after {
+      content: '"';
+    }
+
+    /* Countdown Section */
+    .countdown-section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .countdown-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 4vw, 2.5rem);
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .countdown-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .countdown-number {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1;
+      min-width: 70px;
+      position: relative;
+    }
+
+    .countdown-number::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
+
+    .countdown-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    .event-passed-msg {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--gold);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Action Buttons */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 3rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dark);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border: none;
+      border-radius: 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: none;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      transition: left 0.4s ease;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn span, .btn i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .btn--outline::before {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    }
+
+    .btn--outline:hover {
+      color: var(--dark);
+    }
+
+    /* Social Section */
+    .social-section {
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .social-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      cursor: none;
+    }
+
+    .social-icon:hover {
+      background: var(--gold);
+      color: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.25);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+    }
+
+    .footer p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    /* Music Toggle */
+    .music-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      background: rgba(13, 13, 13, 0.9);
+      color: var(--gold);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      cursor: none;
+    }
+
+    .music-toggle:hover {
+      background: var(--gold);
+      color: var(--dark);
+      transform: scale(1.1);
+    }
+
+    .music-toggle.playing .bars {
+      display: flex;
+    }
+
+    .music-toggle .bars {
+      display: none;
+      gap: 2px;
+      align-items: flex-end;
+      height: 16px;
+    }
+
+    .music-toggle .bar {
+      width: 3px;
+      background: currentColor;
+      border-radius: 1px;
+      animation: barPulse 0.8s ease-in-out infinite alternate;
+    }
+
+    .music-toggle .bar:nth-child(1) { height: 60%; animation-delay: 0s; }
+    .music-toggle .bar:nth-child(2) { height: 100%; animation-delay: 0.2s; }
+    .music-toggle .bar:nth-child(3) { height: 40%; animation-delay: 0.4s; }
+    .music-toggle .bar:nth-child(4) { height: 80%; animation-delay: 0.1s; }
+
+    @keyframes barPulse {
+      from { height: 30%; }
+      to { height: 100%; }
+    }
+
+    .music-toggle .fa-play { display: block; }
+    .music-toggle.playing .fa-play { display: none; }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating Petals */
+    .petal {
+      position: fixed;
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body { cursor: auto; }
+      .cursor, .cursor-dot, .mouse-glow { display: none; }
+      .ornament-frame { top: 10px; left: 10px; right: 10px; bottom: 10px; }
+      .corner { width: 40px; height: 40px; }
+      .btn { padding: 0.8rem 1.5rem; font-size: 0.72rem; }
+    }
+
+    /* Reveal animation helper */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- Particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="ornament-frame">
+      <div class="corner corner--tl"></div>
+      <div class="corner corner--tr"></div>
+      <div class="corner corner--bl"></div>
+      <div class="corner corner--br"></div>
+    </div>
+
+    <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+
+    <div class="couple-names">
+      <div class="name">Jafar Sadath</div>
+      <div class="ampersand">&amp;</div>
+      <div class="name">Fathima Razana</div>
+    </div>
+
+    <div class="tagline">Are Getting Married</div>
+    <div class="inshaallah">إن شاءالله</div>
+
+    <div class="divider">
+      <span class="divider-line"></span>
+      <span class="divider-icon">✦</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <div class="event-details">
+      <div class="event-date">Wednesday, 25th October 2023</div>
+      <div class="event-time">
+        11:00 AM <span class="nikah-badge">Nikah</span>
+      </div>
+      <div class="venue-name">"UNITY HALL"</div>
+      <div class="venue-address">Kallapu, Mangaluru</div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message Section -->
+  <section class="message-section">
+    <div class="divider reveal">
+      <span class="divider-line"></span>
+      <span class="divider-icon">✦</span>
+      <span class="divider-line"></span>
+    </div>
+    <p class="message-text reveal">
+      I cordially request your gracious presence to bless and witness the beginning of our new journey together
+    </p>
+    <div class="divider reveal">
+      <span class="divider-line"></span>
+      <span class="divider-icon">✦</span>
+      <span class="divider-line"></span>
+    </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section class="countdown-section">
+    <div class="countdown-title reveal">Counting the moments</div>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <!-- Action Buttons -->
+  <section class="actions reveal">
+    <a href="https://maps.app.goo.gl/WPhbMPJAkNhVDYTz6" target="_blank" class="btn">
+      <i class="fa-solid fa-location-dot"></i>
+      <span>Show Venue</span>
+    </a>
+    <a href="#" target="_blank" class="btn btn--outline">
+      <i class="fa-solid fa-envelope-open-text"></i>
+      <span>Invitation Card</span>
+    </a>
+  </section>
+
+  <!-- Social Section -->
+  <section class="social-section reveal">
+    <p class="social-label">Reach Me</p>
+    <div class="social-icons">
+      <a href="tel:9663214645" class="social-icon" aria-label="Phone">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+      <a href="https://wa.me/9663214645" target="_blank" class="social-icon" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="https://facebook.com/" target="_blank" class="social-icon" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/jaafkm24" target="_blank" class="social-icon" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Made with love ♡</p>
+  </div>
+
+  <!-- Music Toggle -->
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle Music">
+    <i class="fa-solid fa-play"></i>
+    <div class="bars">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </button>
+
+  <audio id="bgMusic" loop preload="auto"
+    src="./assets/audio/Romantic Song - Student Of The Year - Piano Theme - Background music.mp3"></audio>
+
+  <script>
+    (() => {
+      'use strict';
+
+      // ── Custom Cursor ──
+      const cursor = document.getElementById('cursor');
+      const cursorDot = document.getElementById('cursorDot');
+      const mouseGlow = document.getElementById('mouseGlow');
+      let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+        mouseGlow.style.left = mouseX + 'px';
+        mouseGlow.style.top = mouseY + 'px';
+      });
+
+      function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Hover effect on interactive elements
+      document.querySelectorAll('a, button, .btn').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+
+      // ── Particle System ──
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const PARTICLE_COUNT = 60;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 0.5;
+          this.speedX = (Math.random() - 0.5) * 0.3;
+          this.speedY = (Math.random() - 0.5) * 0.3;
+          this.opacity = Math.random() * 0.5 + 0.1;
+          this.pulse = Math.random() * Math.PI * 2;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          this.pulse += 0.02;
+
+          // Mouse interaction
+          const dx = mouseX - this.x;
+          const dy = mouseY - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            const force = (150 - dist) / 150 * 0.02;
+            this.x -= dx * force;
+            this.y -= dy * force;
+          }
+
+          if (this.x < -10 || this.x > canvas.width + 10 ||
+              this.y < -10 || this.y > canvas.height + 10) {
+            this.reset();
+          }
+        }
+        draw() {
+          const alpha = this.opacity * (0.5 + 0.5 * Math.sin(this.pulse));
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(201, 168, 76, ${alpha})`;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(201, 168, 76, ${0.06 * (1 - dist / 120)})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+
+      // ── Floating Petals ──
+      function createPetal() {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.innerHTML = '✿';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.fontSize = (Math.random() * 14 + 10) + 'px';
+        petal.style.color = `rgba(201, 168, 76, ${Math.random() * 0.3 + 0.1})`;
+        document.body.appendChild(petal);
+
+        const duration = Math.random() * 6 + 6;
+        const drift = (Math.random() - 0.5) * 200;
+
+        petal.animate([
+          { transform: 'translateY(-20px) rotate(0deg)', opacity: 0 },
+          { opacity: 1, offset: 0.1 },
+          { opacity: 1, offset: 0.8 },
+          { transform: `translateY(100vh) translateX(${drift}px) rotate(${360 + Math.random() * 180}deg)`, opacity: 0 }
+        ], {
+          duration: duration * 1000,
+          easing: 'linear'
+        }).onfinish = () => petal.remove();
+      }
+
+      setInterval(createPetal, 2000);
+
+      // ── Countdown Timer ──
+      const weddingDate = new Date('October 25, 2023 11:00:00').getTime();
+      const countdownEl = document.getElementById('countdown');
+
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = weddingDate - now;
+
+        if (diff <= 0) {
+          countdownEl.innerHTML = '<div class="event-passed-msg">The blessed day has arrived ♡</div>';
+          return;
+        }
+
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+
+        const units = [
+          { value: days, label: 'Days' },
+          { value: hours, label: 'Hours' },
+          { value: minutes, label: 'Minutes' },
+          { value: seconds, label: 'Seconds' }
+        ];
+
+        countdownEl.innerHTML = units.map((u, i) =>
+          `<div class="countdown-item" style="transition-delay: ${i * 0.1}s">
+            <div class="countdown-number">${String(u.value).padStart(2, '0')}</div>
+            <div class="countdown-label">${u.label}</div>
+          </div>`
+        ).join('');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // ── Scroll Reveal ──
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.reveal, .countdown-item, .message-text').forEach(el => {
+        observer.observe(el);
+      });
+
+      // ── Music Toggle ──
+      const musicToggle = document.getElementById('musicToggle');
+      const bgMusic = document.getElementById('bgMusic');
+      let isPlaying = false;
+
+      musicToggle.addEventListener('click', () => {
+        if (isPlaying) {
+          bgMusic.pause();
+          musicToggle.classList.remove('playing');
+        } else {
+          bgMusic.play().catch(() => {});
+          musicToggle.classList.add('playing');
+        }
+        isPlaying = !isPlaying;
+      });
+
+      // ── Parallax on Hero ──
+      const hero = document.getElementById('hero');
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        hero.style.opacity = 1 - scrolled / 800;
+      });
+
+    })();
+  </script>
+</body>
+</html>
